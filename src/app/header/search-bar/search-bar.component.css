@@ -3,7 +3,7 @@ input[type=text] {
   width: 358px;
   height: 70px;
   left: 50%;
-  top: 27px;
+  top: 8px;
 
   font-family: Open Sans;
   font-style: normal;
@@ -22,4 +22,27 @@ input[type=text] {
 
 input[type=text]:focus {
   outline: none;
+}
+
+.button {
+  transition: 0.s;
+
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 80%;
+  top: 8px;
+
+  /* Black */
+  background: var(--black);
+  border-radius: 40px;
+  border: none;
+}
+
+.button:hover {
+  background: var(--bs-gray-900);
+}
+
+.button:active {
+  background: var(--bs-gray-700);
 }

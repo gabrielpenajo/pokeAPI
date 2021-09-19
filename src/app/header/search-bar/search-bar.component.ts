@@ -12,4 +12,9 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isClick: boolean = false;
+
+  onClick() {
+    this.isClick = !this.isClick;
+  }
 }
