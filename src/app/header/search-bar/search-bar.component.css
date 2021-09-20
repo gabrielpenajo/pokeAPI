@@ -1,15 +1,13 @@
 input[type=text] {
   position: absolute;
   width: 358px;
-  height: 70px;
+  height: 30px;
   left: 50%;
-  top: 8px;
+  top: 4px;
 
   font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 0px;
   display: block;
   align-items: center;
   padding: 8px 20px;
@@ -25,13 +23,13 @@ input[type=text]:focus {
 }
 
 .button {
-  transition: 0.s;
+  transition: 0.1s;
 
   position: absolute;
-  width: 70px;
-  height: 70px;
+  width: 30px;
+  height: 30px;
   left: 80%;
-  top: 8px;
+  top: 4px;
 
   /* Black */
   background: var(--black);
