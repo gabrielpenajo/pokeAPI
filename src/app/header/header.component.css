@@ -8,32 +8,26 @@
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.background-rect {
-	position: absolute;
-	left: 0%;
-	right: 0%;
-	top: 0%;
-	bottom: -27%;
+header {
+	padding: 20px 0px;
+  text-align: center;
 
 	/* Topbar */
 	background: var(--topbar-color);
 }
 
 /* Pokédex */
-#pokedex {
+header h1 {
 	position: absolute;
-	width: 253px;
-	height: 70px;
 	left: 135px;
-	top: 8px;
 
 	font-family: Open Sans, sans-serif;
 	font-style: normal;
 	font-weight: bold;
-	font-size: 48px;
-	line-height: 65px;
-	display: flex;
+  font-size: 28px;
+	line-height: 0px;
 	align-items: center;
 
 	color: var(--primary-color);
+	letter-spacing: 2px;
 }
