@@ -14,7 +14,7 @@ main {
     position: relative;
 }
 
-.full-size{
+.full-size {
     width: 100%;
     float: left;
     position: relative;
@@ -23,6 +23,82 @@ main {
 :root {
     --topbar-color: #eb4760;
     --primary-color: #f3f5f7;
+    --gainsboro: #dae0e7;
     --black: #000000;
     --half-gray: #808080;
+    --medium-gray: #292929;
+    --faint-gray: #525252;
+    --stat-green: #256a29;
+}
+
+.grass {
+  background-color: #95da99;
+}
+
+.poison {
+  background-color: #ab9ba5;
+}
+
+.fire {
+  background-color: #f5a560;
+}
+
+.fighting {
+  background-color: #f0a094;
+}
+
+.water {
+  background-color: #aec9d6;
+}
+
+.normal {
+  background-color: #e0e0e0;
+}
+
+.rock {
+  background-color: #8a7946;
+}
+
+.ground {
+  background-color: #c3926f;
+}
+
+.bug {
+  background-color: #c0eb84;
+}
+
+.electric {
+  background-color: #ffe985;
+}
+
+.ghost {
+  background-color: #716bb3;
+}
+
+.fairy {
+  background-color: #ffc8C2;
+}
+
+.psychic {
+  background-color: #fc9cf9;
+}
+
+.steel {
+  background-color: #8bbbbb;
+}
+
+.ice {
+  background-color: #beddee;
+}
+
+.dragon {
+  background-color: #577399;
+}
+
+.flying {
+  background-color: #9fbcd1;
+}
+
+.dark {
+  background-color: #614c42;
 }

@@ -1,16 +1,39 @@
-input[type=text] {
+.column {
+  float: left;
+}
+
+.left {
+  width: 80%;
+}
+
+.right {
+  width: 20%;
+  align-content: flex-end;
+}
+
+.row {
   position: absolute;
-  width: 358px;
+  right: 10%;
+  top: 2px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type=text] {
+  width: 200px;
   height: 30px;
-  left: 50%;
-  top: 4px;
 
   font-family: Open Sans;
   font-size: 18px;
   line-height: 0px;
   display: block;
   align-items: center;
-  padding: 8px 20px;
+  padding-left: 8px;
+  padding-right: 20px;
 
   background-color: var(--primary-color);
   overflow: hidden;
@@ -23,13 +46,11 @@ input[type=text]:focus {
 }
 
 .button {
+  margin-left: 12px;
   transition: 0.1s;
 
-  position: absolute;
   width: 30px;
   height: 30px;
-  left: 80%;
-  top: 4px;
 
   /* Black */
   background: var(--black);
@@ -38,9 +59,9 @@ input[type=text]:focus {
 }
 
 .button:hover {
-  background: var(--bs-gray-900);
+  background: var(--medium-gray);
 }
 
 .button:active {
-  background: var(--bs-gray-700);
+  background: var(--faint-gray);
 }

@@ -1,22 +1,45 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Observable, from } from 'rxjs';
+import { map, mergeMap, catchError } from 'rxjs/operators';
+import { Pokemon } from '../models/pokemon';
+import { environment } from './../../environments/environment';
+import { NavigationError, Router } from '@angular/router';
+
+const API = environment.API;
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'any'
 })
 export class DataService {
+  pokemons: Pokemon[] = [];
 
   constructor(
-    private http: HttpClient
+    private httpClient: HttpClient,
+    private router: Router
   ) { }
 
   // Get pokemon from API
-  getPokemons(limit: number, offset: number) {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
+  fetchPokemonFirstGen() {
+    const firstGenUrl: string = `${API}pokemon?limit=151`;
+
+    this.httpClient.get(firstGenUrl).pipe(
+      map((value: any) => value.results),
+      map((value: any) => {
+        return from(value).pipe(
+          mergeMap((v: any) => this.httpClient.get(v.url))
+        )
+      }),
+      mergeMap(value => value),
+    ).subscribe((result: any) => {
+      const pokemon = Pokemon.parse(result);
+      this.pokemons[result.id] = pokemon;
+    });
   }
 
   // Get more pokemon data
-  getMoreData(name: string) {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+  fetchPokemonData(param: string) {
+    return this.httpClient.get(`${API}pokemon/${param}/`);
   }
 }
