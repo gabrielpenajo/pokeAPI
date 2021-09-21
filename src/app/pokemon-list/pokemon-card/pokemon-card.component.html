@@ -1,0 +1,16 @@
+<div class="pokemon-card {{ pokemon.types[0] }}"
+  *ngIf="pokemon"
+  (click)="onClick()">
+  <div class="row">
+    <div class="column left">
+      <h3>{{ pokemon.name }}</h3>
+      <ul *ngFor="let type of pokemon.types">
+        <li>{{ type | titlecase }}</li>
+      </ul>
+    </div>
+    <div class="column right">
+      <h5>#{{ pokemon.id | number:'3.0'}}</h5>
+    </div>
+  </div>
+  <img [src]="pokemon.sprite" [alt]="pokemon.name">
+</div>

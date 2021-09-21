@@ -1,0 +1,43 @@
+<div class="pokemon"
+  *ngIf="pokemon !== undefined">
+  <div class="{{ pokemon.types[0].type.name }}">
+    <div class="row">
+      <div class="column left">
+        <h1>{{ pokemon.name }}</h1>
+        <h2>Types</h2>
+        <ul *ngFor="let element of pokemon.types">
+          <li id="types">{{element.type.name | titlecase}}</li>
+        </ul>
+        <h2>Info</h2>
+        <ul>
+          <li>Height: {{pokemon.height/10 | number:'.2'}} cm</li>
+          <li>Weight: {{pokemon.weight/10 | number:'.2'}} kg</li>
+          <li>Abilities:
+            <ul class="abilities" *ngFor="let element of pokemon.abilities">
+              <li>{{element.ability.name | titlecase}}</li>
+            </ul>
+          </li>
+        </ul>
+        <h2>Stats</h2>
+        <ul class = "stats" *ngFor="let element of pokemon.stats">
+          <div class="row">
+            <div class=column>
+              <li id="stats">{{element.stat.name | uppercase}}</li>
+            </div>
+            <div class="column">
+              <li class="rect"
+                [style.width.px]="element.base_stat">
+                {{ element.base_stat }}
+              </li>
+            </div>
+          </div>
+        </ul>
+      </div>
+      <div class="column right">
+        <div class="row">
+        <p id="number">#{{ pokemon.id | number:'3.0' }}</p>
+        <img [src]="pokemon.sprites.other.dream_world.front_default">
+      </div>
+    </div>
+  </div>
+</div>

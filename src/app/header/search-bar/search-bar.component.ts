@@ -1,4 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+const info = environment.pokeInfo;
+const param = environment.param;
 
 @Component({
   selector: 'app-search-bar',
@@ -6,15 +11,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  input: string = '';
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
-  }
-
-  isClick: boolean = false;
+  ngOnInit(): void { }
 
   onClick() {
-    this.isClick = !this.isClick;
+    this.search();
+  }
+
+  onKeyDown(event: any) {
+    this.input = event.target.value;
+  }
+
+  onKeyUp(event: any) {
+    this.input = event.target.value;
+  }
+
+  search() {
+    if (this.input == '') {
+      return;
+    }
+    else {
+      this.router.navigateByUrl(`${info}${param}${this.input}`);
+    }
   }
 }
